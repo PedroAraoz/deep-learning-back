@@ -84,7 +84,6 @@ async def simpleAnalyzeImage(file: UploadFile = File(...)):
 def model_img_evaluate(img):
     # Preprocess and display image
     norm = transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    inv_norm = transforms.Normalize((-0.5, -0.5, -0.5), (-0.5, -0.5, -0.5))
     preprocess = transforms.Compose([
         transforms.Resize((200, 200)),
         transforms.ToTensor(),
