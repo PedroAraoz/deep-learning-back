@@ -2,15 +2,23 @@ import datetime
 import io
 
 import uvicorn
-import torch
-from PIL import Image
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+
+from PIL import Image
+import torch
 from torchvision import models, transforms
 import torch.nn as nn
 import torch.optim as optim
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 device = 'cpu'
 
 model = models.resnet50(pretrained=True)
