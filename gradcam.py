@@ -1,11 +1,10 @@
-from matplotlib import pyplot as plt
-import numpy
-import numpy as np
-from pytorch_grad_cam import GradCAM, ScoreCAM, GradCAMPlusPlus, AblationCAM, XGradCAM, EigenCAM
-from pytorch_grad_cam.utils.image import show_cam_on_image
-from torchvision.models import resnet50
-from main import *
+
 import cv2
+import numpy as np
+from pytorch_grad_cam import GradCAM
+from pytorch_grad_cam.utils.image import show_cam_on_image
+
+from main import *
 
 device = 'cpu'
 
